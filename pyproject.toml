@@ -1,0 +1,24 @@
+
+[tool.poetry]
+name = "coursework-1"
+version = "0.1.0"
+description = "Demo coursework project"
+authors = ["You <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "*"
+requests = "*"
+openpyxl = "*"
+
+[tool.black]
+line-length = 119
+exclude = '.git|venv'
+
+[tool.isort]
+line_length = 119
+
+[tool.mypy]
+disallow_untyped_defs = true
+warn_return_any = true
+exclude = 'venv'
