@@ -10,6 +10,7 @@ df = pd.DataFrame(
     }
 )
 
+
 def test_spend_by_category(tmp_path):
     res = spend_by_category(df, "Супермаркеты", "2023-12-15")
     assert res["total_spent"] == 250

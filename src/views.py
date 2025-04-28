@@ -19,10 +19,12 @@ from .logger import logger
 USER_SETTINGS_FILE = Path(__file__).resolve().parent.parent / "user_settings.json"
 DEFAULT_SETTINGS = {"user_currencies": ["USD", "EUR"], "user_stocks": ["AAPL", "AMZN", "GOOGL", "MSFT", "TSLA"]}
 
+
 def _load_settings() -> Dict[str, Any]:
     if USER_SETTINGS_FILE.exists():
         return json.loads(USER_SETTINGS_FILE.read_text(encoding="utf-8"))
     return DEFAULT_SETTINGS
+
 
 def index(date_time_str: str, xlsx_path: str | Path = None) -> str:
     """Return JSON string for *Главная* page."""
