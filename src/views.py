@@ -1,20 +1,12 @@
-
 from __future__ import annotations
 
 import json
 from datetime import datetime
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import Any, Dict, List
 
-from .utils import (
-    send_greeting,
-    read_transactions,
-    card_info,
-    top_transactions,
-    get_currency_rates,
-    get_stock_prices,
-)
 from .logger import logger
+from .utils import card_info, get_currency_rates, get_stock_prices, read_transactions, send_greeting, top_transactions
 
 USER_SETTINGS_FILE = Path(__file__).resolve().parent.parent / "user_settings.json"
 DEFAULT_SETTINGS = {"user_currencies": ["USD", "EUR"], "user_stocks": ["AAPL", "AMZN", "GOOGL", "MSFT", "TSLA"]}

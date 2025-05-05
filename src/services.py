@@ -2,18 +2,16 @@ from __future__ import annotations
 
 import json
 import math
+import os
 import re
 from datetime import datetime
-from typing import List, Dict, Any, Callable
-
-from .logger import logger
-
-import os
 from functools import lru_cache
-from typing import Dict
+from typing import Any, Callable, Dict, List
+
 import requests
 from dotenv import load_dotenv
 
+from .logger import logger
 
 # ---------------- Общие ----------------
 
@@ -28,8 +26,9 @@ def _jsonify(obj: Any) -> str:
 def simple_search(query: str, transactions: List[Dict[str, Any]]) -> str:
     """Return transactions whose *query* substring appears in description or category."""
     q = query.lower()
-    filtered = [t for t in transactions if
-                q in str(t.get("Описание", "")).lower() or q in str(t.get("Категория", "")).lower()]
+    filtered = [
+        t for t in transactions if q in str(t.get("Описание", "")).lower() or q in str(t.get("Категория", "")).lower()
+    ]
     logger.info("Simple search for '%s': %d results", query, len(filtered))
     return _jsonify(filtered)
 

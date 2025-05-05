@@ -1,5 +1,5 @@
-
 import pandas as pd
+
 from src.reports import spend_by_category
 
 df = pd.DataFrame(

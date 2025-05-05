@@ -3,7 +3,7 @@
 name = "coursework-1"
 version = "0.1.0"
 description = "Demo coursework project"
-authors = ["You <you@example.com>"]
+authors = ["Danilka <Gipno262@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -23,23 +23,6 @@ disallow_untyped_defs = true
 warn_return_any = true
 exclude = 'venv'
 
-[project]
-dependencies = [
-    "requests>=2.31",
-    "python-dotenv>=1.0"
-]
-
 [build-system]
-requires = ["setuptools>=65"]
-build-backend = "setuptools.build_meta"
-
-[project]
-name = "coursework"          # любое уникальное имя
-version = "0.1.0"
-dependencies = [
-    "requests>=2.31",
-    "python-dotenv>=1.0"
-]
-
-[tool.setuptools.packages.find]
-where = ["src"]              # говорим setuptools'у, что код лежит в src/
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

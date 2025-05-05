@@ -1,11 +1,11 @@
-
 """Utility helpers for coursework project."""
+
 from __future__ import annotations
 
 import random
 from datetime import datetime, time
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import Any, Dict, List
 
 import pandas as pd
 
@@ -34,6 +34,7 @@ def _get_part_of_day(now: time) -> str:
     if time(18, 0) <= now < time(23, 0):
         return GREETINGS["evening"]
     return GREETINGS["night"]
+
 
 # ------------------------------------------------------------
 # Public helpers
@@ -74,11 +75,12 @@ def card_info(df: pd.DataFrame) -> List[Dict[str, Any]]:
 
 def top_transactions(df: pd.DataFrame, limit: int = 5) -> List[Dict[str, Any]]:
     df_sorted = df.reindex(df[DATA_COL_PAYMENT].abs().sort_values(ascending=False).index).head(limit)
-    res = df_sorted[
-        [DATA_COL_DATE, DATA_COL_PAYMENT, DATA_COL_CATEGORY, DATA_COL_DESCRIPTION]
-    ].to_dict(orient="records")
+    res = df_sorted[[DATA_COL_DATE, DATA_COL_PAYMENT, DATA_COL_CATEGORY, DATA_COL_DESCRIPTION]].to_dict(
+        orient="records"
+    )
     logger.debug("Top %d transactions: %s", limit, res)
     return res
+
 
 # ---------------- External data (stubs) ----------------------
 
