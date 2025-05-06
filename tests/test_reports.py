@@ -1,5 +1,5 @@
-
 import pandas as pd
+
 from src.reports import spend_by_category
 
 df = pd.DataFrame(
@@ -9,6 +9,7 @@ df = pd.DataFrame(
         "Сумма платежа": [100, 150, 200],
     }
 )
+
 
 def test_spend_by_category(tmp_path):
     res = spend_by_category(df, "Супермаркеты", "2023-12-15")

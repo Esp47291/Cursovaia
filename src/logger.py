@@ -1,4 +1,3 @@
-
 import logging
 
 LOGGER_NAME = "coursework_logger"
