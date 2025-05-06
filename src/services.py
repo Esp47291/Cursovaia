@@ -6,7 +6,7 @@ import os
 import re
 from datetime import datetime
 from functools import lru_cache
-from typing import Any, Callable, Dict, List
+from typing import Any, Dict, List
 
 import requests
 from dotenv import load_dotenv

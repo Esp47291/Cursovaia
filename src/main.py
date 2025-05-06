@@ -4,6 +4,7 @@ from pathlib import Path
 import pandas as pd
 from .reports import spend_by_category
 
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Coursework 1 demo CLI")
     parser.add_argument("--datetime", default="2023-12-15 15:30:00", help="Datetime 'YYYY-MM-DD HH:MM:SS'")
@@ -15,6 +16,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
 def main() -> None:
     filepath = Path(__file__).parent.parent / "data" / "transactions.xlsx"

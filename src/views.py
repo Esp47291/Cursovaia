@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict
 
 from .logger import logger
 from .utils import card_info, get_currency_rates, get_stock_prices, read_transactions, send_greeting, top_transactions
